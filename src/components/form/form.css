@@ -1,0 +1,33 @@
+.form-div{
+    background-color: #D3D3D3;
+    width: 60%;
+    margin: auto;
+    padding: 2%;
+    border-radius: 25px;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 10px 10px 6px 6px #777;
+}
+
+.label-div{
+    margin-bottom: 20px;
+}
+
+input{
+    width: 50%;
+    border-radius: 2px;
+    height: 18px;
+}
+
+.button-div{
+    width: 50%;
+    margin: 0 auto 10px auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+button{
+    font-size: 18px;
+    padding: 2%;
+    border-radius: 4px;
+}
