@@ -1,0 +1,35 @@
+.success{
+    background-color: green;
+}
+
+.feedback{
+    width: 25%;
+    margin: 20px auto 20px auto;
+    height: 70px;
+}
+
+.message{
+    margin: auto;
+    line-height: 30px;
+    text-align: center;
+}
+
+.failure{
+    background-color: red;
+}
+
+.success{
+    background-color: green;
+}
+
+#close {
+    float:right;
+    display:inline-block;
+    padding:2px 5px;
+    background:#ccc;
+}
+
+#close:hover{
+    cursor: pointer;
+    color:#fff;
+}
