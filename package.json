@@ -4,12 +4,10 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
-    "chai-enzyme": "^1.0.0-beta.1",
-    "enzyme": "^3.7.0",
-    "enzyme-adapter-react-16": "^1.6.0",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-scripts": "2.0.5"
+    "react-scripts": "2.0.5",
+    "remove": "^0.1.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -27,6 +25,10 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "chai-enzyme": "^1.0.0-beta.1",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
+    "react-test-renderer": "^16.5.2",
     "sinon": "^7.0.0"
   }
 }
