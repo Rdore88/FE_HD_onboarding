@@ -91,7 +91,8 @@ export default class Login extends Component {
             <div>
                 <h1 className='header'>Please login or sign up</h1>
                 <Feedback feedback={this.state.feedback} onClose={this.onClose}/>
-                <Form onChange={this.onChange} state={this.state} onCreate={this.onCreate} onSignIn={this.onSignIn}/>
+                <Form onChange={this.onChange} username={this.state.username} password={this.state.password}
+                      onCreate={this.onCreate} onSignIn={this.onSignIn}/>
             </div>
 
     )
