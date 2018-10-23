@@ -16,7 +16,7 @@ const createSuccess = {
     message: "You have successfully signed up for this awesome product"
 }
 
-const createFailre = {
+const createFailure = {
     show: true,
     success: false,
     message: "Username is already in use, please try a different one"
@@ -28,10 +28,24 @@ const closeFeedback = {
     message: null
 }
 
+const internalError = {
+    show: true,
+    success: false,
+    message: "Internal error, please try again"
+}
+
+const noInfoError = {
+    show: true,
+    success: false,
+    message: "Please fill out form completely"
+}
+
 export {
     signInSuccess,
     signInFailure,
     createSuccess,
-    createFailre,
-    closeFeedback
+    createFailure,
+    closeFeedback,
+    internalError,
+    noInfoError
 }

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Form from '../form/Form';
 import Feedback from '../feedback/Feedback';
-import { signInSuccess, signInFailure, createSuccess, createFailre, closeFeedback } from "../feedback/feedbackEnums";
+import { signInSuccess, signInFailure, createSuccess, createFailure, closeFeedback, internalError, noInfoError } from "../feedback/feedbackEnums";
+import axios from 'axios';
 
 export default class Login extends Component {
     state = {
@@ -15,22 +16,68 @@ export default class Login extends Component {
     }
 
     onChange = (event) => {
-        console.log(event.target.name)
         this.setState({
             [event.target.name]: event.target.value
         })
     }
 
     onCreate = () => {
-        this.setState({
-            feedback: createFailre
-        })
+        if (this.state.password && this.state.username){
+            axios.post('http://localhost:8080/user', {
+                username: this.state.username,
+                password: this.state.password
+            })
+                .then(response => {
+                    if (response.data){
+                        this.setState({
+                            feedback: createSuccess
+                        })
+                    } else {
+                        this.setState({
+                            feedback: createFailure
+                        })
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                    this.setState({
+                        feedback: internalError
+                    })
+                });
+            this.setState({
+                feedback: createFailure
+            })
+        } else {
+            this.setState({
+                feedback: noInfoError
+            })
+        }
     };
 
     onSignIn = () => {
-        this.setState({
-            feedback: signInSuccess
+        axios.get('http://35.227.108.57/user', {
+            params: {
+                username: this.state.username,
+                password: this.state.password
+            }
         })
+            .then(response => {
+                if (response.data){
+                    this.setState({
+                        feedback: signInSuccess
+                    })
+                } else {
+                    this.setState({
+                        feedback: signInFailure
+                    })
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                this.setState({
+                    feedback: internalError
+                })
+            })
     };
 
     onClose = () => {

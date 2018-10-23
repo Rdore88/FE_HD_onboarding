@@ -9,12 +9,12 @@ export default class Form extends Component {
                 <div className='label-div'>
                     <label className='label' htmlFor='name'>Name</label>
                     <br/>
-                    <input name='username' className='input' value={username} onChange={this.props.onChange} />
+                    <input name='username' className='input' required={true} value={username} onChange={this.props.onChange} />
                     <br/>
                     <br/>
                     <label className='label' htmlFor='name'>Password</label>
                     <br/>
-                    <input name='password' type='password' className='input' value={password} onChange={this.props.onChange} />
+                    <input name='password' type='password' className='input' required={true} value={password} onChange={this.props.onChange} />
                 </div>
                 <div className='button-div'>
                     <button onClick={this.props.onSignIn}> Sign In </button>
