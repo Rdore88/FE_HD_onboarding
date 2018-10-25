@@ -23,7 +23,7 @@ export default class Login extends Component {
 
     onCreate = () => {
         if (this.state.password && this.state.username){
-            axios.post('http://localhost:8080/user', {
+            axios.post('http://35.227.108.57/user', {
                 username: this.state.username,
                 password: this.state.password
             })
